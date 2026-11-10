@@ -1,0 +1,57 @@
+
+> brandinning-web@0.1.0 dev
+> next dev -p 3001
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+
+ ✓ Starting...
+ ✓ Ready in 4.1s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.4s (587 modules)
+ HEAD / 200 in 1459ms
+ GET / 200 in 5894ms
+ GET / 200 in 5928ms
+ ✓ Compiled in 669ms (280 modules)
+ GET / 200 in 77ms
+ ○ Compiling /services ...
+ ✓ Compiled /services in 513ms (576 modules)
+ HEAD /services 200 in 621ms
+ ✓ Compiled /about in 327ms (583 modules)
+ HEAD /about 200 in 432ms
+ ✓ Compiled /contact in 245ms (585 modules)
+ HEAD /contact 200 in 309ms
+ GET / 200 in 105ms
+ GET /contact 200 in 122ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 655ms (588 modules)
+ GET /team 404 in 760ms
+ GET /projects 404 in 761ms
+ ✓ Compiled /api/contact in 456ms (349 modules)
+Contact API error: SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+    at JSON.parse (<anonymous>)
+    at parseJSONFromBytes (node:internal/deps/undici/undici:3226:19)
+    at successSteps (node:internal/deps/undici/undici:7169:27)
+    at readAllBytes (node:internal/deps/undici/undici:4682:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ POST /api/contact 500 in 590ms
+Contact API error: SyntaxError: Bad escaped character in JSON at position 8 (line 1 column 9)
+    at JSON.parse (<anonymous>)
+    at parseJSONFromBytes (node:internal/deps/undici/undici:3226:19)
+    at successSteps (node:internal/deps/undici/undici:7169:27)
+    at readAllBytes (node:internal/deps/undici/undici:4682:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+ POST /api/contact 500 in 13ms
+ GET /team 404 in 97ms
+[BrandInning Inbound Lead]: {
+  timestamp: '2026-11-10T15:06:00.792Z',
+  name: 'John Doe',
+  email: 'john@brandinning.com',
+  phone: '+919953633395',
+  company: 'N/A',
+  service: undefined,
+  budget: undefined,
+  message: 'No message provided'
+}
+ POST /api/contact 200 in 25ms
+[?25h
