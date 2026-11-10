@@ -1,0 +1,2 @@
+(function($){"use strict";$(window).on("elementor/frontend/init",function(){var txbackgroundImage=function(){var img=$("[data-background]");img.css("background-image",function(){var bg="url("+$(this).data("background")+")";if($(this).data("background")){return bg}else{return!1}})};var niceSelect=function(){if($("select").length){$("select").niceSelect()}};elementorFrontend.hooks.addAction("frontend/element_ready/hero_slider.default",function($scope,$){})})})(jQuery)
+;
