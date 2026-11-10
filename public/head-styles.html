@@ -161,3 +161,30 @@
   window.addEventListener('load', initLiveCounters);
 })();
 </script>
+<style id="mobile-nav-caret-fix">
+.mobile-main-navigation .dropdown-btn span,
+.mobile-main-navigation .dropdown-btn i,
+.mobile-main-navigation .dropdown-btn .fas,
+.mobile-main-navigation .dropdown-btn .fa-caret-right {
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
+  font-weight: 900 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+.mobile-main-navigation .dropdown-btn span.fa-caret-right::before,
+.mobile-main-navigation .dropdown-btn .fas.fa-caret-right::before,
+.mobile-main-navigation .dropdown-btn .fas::before {
+  content: "\f054" !important;
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
+  font-weight: 900 !important;
+  font-size: 15px !important;
+}
+.mobile-main-navigation .dropdown-btn.toggle-open {
+  transform: rotate(90deg) !important;
+}
+</style>

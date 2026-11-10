@@ -155,18 +155,160 @@ export default function ClientInteractions() {
       });
     };
 
+    // ----------------------------------------------------
+    // 5. MOBILE DRAWER & NAVIGATION ACCORDION ENGINE
+    // ----------------------------------------------------
+    const initMobileMenu = () => {
+      // 1. Inject dropdown toggle buttons for items with dropdown-menu if not present
+      const dropdownLis = document.querySelectorAll<HTMLElement>(
+        ".mobile-main-navigation li.dropdown"
+      );
+      dropdownLis.forEach((li) => {
+        const subMenu = li.querySelector<HTMLElement>(":scope > .dropdown-menu");
+        if (subMenu && !li.querySelector(":scope > .dropdown-btn")) {
+          const btn = document.createElement("div");
+          btn.className = "dropdown-btn";
+          btn.innerHTML = '<i class="fa-solid fa-angle-right"></i>';
+          btn.setAttribute("role", "button");
+          btn.setAttribute("aria-label", "Toggle Submenu");
+          li.appendChild(btn);
+        }
+      });
+    };
+
+    const handleMobileClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+
+      // A. Open/Toggle drawer via hamburger button
+      const openBtn = target.closest("#menuToggle, .chy-menu-btn-1") as HTMLElement | null;
+      if (openBtn) {
+        e.preventDefault();
+        const menu = document.querySelector(".fullpage-menu");
+        if (menu) {
+          const isOpen = menu.classList.contains("brandinning-open") || menu.classList.contains("egma-open");
+          if (isOpen) {
+            menu.classList.remove("brandinning-open", "egma-open");
+            document.body.style.overflow = "";
+            document.documentElement.classList.remove("brandinning-menu-open");
+          } else {
+            menu.classList.add("brandinning-open", "egma-open");
+            document.body.style.overflow = "hidden";
+            document.documentElement.classList.add("brandinning-menu-open");
+          }
+        }
+        return;
+      }
+
+      // B. Close drawer via close icon
+      const closeBtn = target.closest("#menuToggle2, .fullpage-menu-close") as HTMLElement | null;
+      if (closeBtn) {
+        e.preventDefault();
+        const menu = document.querySelector(".fullpage-menu");
+        if (menu) {
+          menu.classList.remove("brandinning-open", "egma-open");
+          document.body.style.overflow = "";
+          document.documentElement.classList.remove("brandinning-menu-open");
+        }
+        return;
+      }
+
+      // C. Click on backdrop overlay (outside .fullpage-menu-inner)
+      const fullpageMenu = target.closest(".fullpage-menu") as HTMLElement | null;
+      if (fullpageMenu && (fullpageMenu.classList.contains("brandinning-open") || fullpageMenu.classList.contains("egma-open"))) {
+        const insideInner = target.closest(".fullpage-menu-inner");
+        if (!insideInner) {
+          fullpageMenu.classList.remove("brandinning-open", "egma-open");
+          document.body.style.overflow = "";
+          document.documentElement.classList.remove("brandinning-menu-open");
+          return;
+        }
+      }
+
+      // D. Dropdown caret or header toggle inside mobile nav
+      const dropdownBtn = target.closest(".mobile-main-navigation .dropdown-btn") as HTMLElement | null;
+      const dropdownLink = target.closest(
+        ".mobile-main-navigation li.dropdown > a"
+      ) as HTMLAnchorElement | null;
+
+      let parentLi: HTMLElement | null = null;
+      let isAnchorClick = false;
+
+      if (dropdownBtn) {
+        parentLi = dropdownBtn.closest("li.dropdown");
+      } else if (dropdownLink) {
+        const href = dropdownLink.getAttribute("href");
+        if (!href || href === "#" || href.startsWith("javascript:")) {
+          e.preventDefault();
+          parentLi = dropdownLink.closest("li.dropdown");
+          isAnchorClick = true;
+        }
+      }
+
+      if (parentLi) {
+        const subMenu = parentLi.querySelector<HTMLElement>(":scope > .dropdown-menu");
+        const btn = parentLi.querySelector<HTMLElement>(":scope > .dropdown-btn");
+        if (subMenu) {
+          const isCurrentlyOpen =
+            subMenu.style.display === "block" ||
+            subMenu.classList.contains("show");
+          if (isCurrentlyOpen) {
+            subMenu.style.display = "none";
+            subMenu.classList.remove("show");
+            if (btn) btn.classList.remove("toggle-open");
+          } else {
+            subMenu.style.display = "block";
+            subMenu.classList.add("show");
+            if (btn) btn.classList.add("toggle-open");
+          }
+        }
+        return;
+      }
+
+      // E. Closing drawer on regular navigation link click
+      const navLink = target.closest(
+        "#m-main-nav a[href]:not([href='#']):not([href^='javascript:'])"
+      );
+      if (navLink) {
+        const menu = document.querySelector(".fullpage-menu");
+        if (menu) {
+          menu.classList.remove("brandinning-open", "egma-open");
+          document.body.style.overflow = "";
+          document.documentElement.classList.remove("brandinning-menu-open");
+        }
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth >= 992) {
+        const menu = document.querySelector(".fullpage-menu");
+        if (menu && (menu.classList.contains("brandinning-open") || menu.classList.contains("egma-open"))) {
+          menu.classList.remove("brandinning-open", "egma-open");
+          document.body.style.overflow = "";
+          document.documentElement.classList.remove("brandinning-menu-open");
+        }
+      }
+    };
+
     initCounters();
+    initMobileMenu();
     document.addEventListener("click", handleAccordionClick);
     document.addEventListener("click", handleVideoClick);
+    document.addEventListener("click", handleMobileClick);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
 
-    const timer = setTimeout(initCounters, 400);
+    const timer = setTimeout(() => {
+      initCounters();
+      initMobileMenu();
+    }, 400);
 
     return () => {
       clearTimeout(timer);
       document.removeEventListener("click", handleAccordionClick);
       document.removeEventListener("click", handleVideoClick);
+      document.removeEventListener("click", handleMobileClick);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
