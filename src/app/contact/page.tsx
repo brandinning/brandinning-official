@@ -1,32 +1,29 @@
-import React from "react";
-import ContactForm from "@/components/ContactForm";
-import { BRAND } from "@/lib/data";
-import { Sparkles } from "lucide-react";
+import fs from "fs";
+import path from "path";
+import Script from "next/script";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: `Contact Us & Request Proposal — ${BRAND.name}`,
-  description: `Get in touch with BrandInning. Speak to our technical leadership in Noida, India (${BRAND.contact.indiaPhone}) or Cape Coral, Florida (${BRAND.contact.usaPhone}).`,
+export const metadata: Metadata = {
+  title: "Contact Us — Brandinning",
+  description: "Get in touch with Brandinning for digital marketing, SEO, web development and performance advertising solutions.",
 };
 
 export default function ContactPage() {
-  return (
-    <div className="py-12">
-      <div className="max-w-5xl mx-auto px-6 text-center space-y-4 mb-16">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-950/60 border border-orange-800/60 text-xs font-bold text-orange-400 uppercase tracking-widest">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Confidential Consultation</span>
-        </div>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
-          Let’s Talk <span className="gradient-accent">Results & Growth</span>
-        </h1>
-        <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Whether you need a full Next.js rebuild, organic search overhaul, or high-ROAS paid acquisition, our technical strategists are ready.
-        </p>
-      </div>
+  const contactPath = path.join(process.cwd(), "public", "exact-contact.html");
+  const exactContact = fs.existsSync(contactPath)
+    ? fs.readFileSync(contactPath, "utf8")
+    : "<div className='p-8 text-center text-xl'>Loading Contact...</div>";
 
-      <div className="max-w-7xl mx-auto px-6 pb-20">
-        <ContactForm />
-      </div>
-    </div>
+  return (
+    <>
+      <div 
+        id="exact-contact-wrapper" 
+        dangerouslySetInnerHTML={{ __html: exactContact }} 
+      />
+      <Script 
+        src="https://brandinning.com/wp-includes/js/jquery/jquery.min.js" 
+        strategy="beforeInteractive" 
+      />
+    </>
   );
 }
