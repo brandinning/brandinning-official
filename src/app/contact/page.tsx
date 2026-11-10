@@ -21,7 +21,7 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: exactContact }} 
       />
       <Script 
-        src="https://brandinning.com/wp-includes/js/jquery/jquery.min.js" 
+        src="/wp-includes/js/jquery/jquery.min.js" 
         strategy="beforeInteractive" 
       />
     </>

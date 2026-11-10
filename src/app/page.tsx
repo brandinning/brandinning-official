@@ -17,11 +17,11 @@ export default function HomePage() {
       
       {/* Essential Core Scripts for Menu, Sliders & Interaction */}
       <Script 
-        src="https://brandinning.com/wp-includes/js/jquery/jquery.min.js" 
+        src="/wp-includes/js/jquery/jquery.min.js" 
         strategy="beforeInteractive" 
       />
       <Script 
-        src="https://brandinning.com/wp-content/plugins/litespeed-cache/assets/js/webfontloader.min.js" 
+        src="/wp-content/plugins/litespeed-cache/assets/js/webfontloader.min.js" 
         strategy="lazyOnload" 
       />
     </>

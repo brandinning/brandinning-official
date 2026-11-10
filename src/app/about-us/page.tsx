@@ -21,7 +21,7 @@ export default function AboutUsPage() {
         dangerouslySetInnerHTML={{ __html: exactAbout }} 
       />
       <Script 
-        src="https://brandinning.com/wp-includes/js/jquery/jquery.min.js" 
+        src="/wp-includes/js/jquery/jquery.min.js" 
         strategy="beforeInteractive" 
       />
     </>
