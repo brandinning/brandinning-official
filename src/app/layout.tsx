@@ -6,6 +6,16 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Brandinning — Create your finest digital image",
   description: "Brandinning — Digital Marketing Agency. We turn experiences into solutions!",
+  icons: {
+    icon: [
+      { url: "/wp-content/themes/choicy/assets/img/favicon.webp", type: "image/webp" },
+      { url: "/wp-content/uploads/2025/07/cropped-Logo3-scaled-1-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/wp-content/uploads/2025/07/cropped-Logo3-scaled-1-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/wp-content/uploads/2025/07/cropped-Logo3-scaled-1-180x180.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
