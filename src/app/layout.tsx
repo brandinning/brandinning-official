@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
-import CounterAnimator from "@/components/CounterAnimator";
+import ClientInteractions from "@/components/ClientInteractions";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en-US">
       <head dangerouslySetInnerHTML={{ __html: headStyles }} />
       <body className="home wp-singular page-template page-template-elementor_header_footer page page-id-9298 wp-embed-responsive wp-theme-choicy no-sidebar elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-9298">
-        <CounterAnimator />
+        <ClientInteractions />
         {children}
       </body>
     </html>
