@@ -1,9 +1,80 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font Awesome 6 Pro & Free font-faces with 700 & 900 weights */
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.woff2") format("woff2"),
+       url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.woff2") format("woff2"),
+       url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.woff2") format("woff2"),
+       url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.woff2") format("woff2"),
+       url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.woff2") format("woff2"),
+       url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.woff2") format("woff2"),
+       url("/wp-content/themes/choicy/assets/fonts/fa-solid-900.ttf") format("truetype");
+}
+
 /* Ensure full width and clean rendering */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+/* Navbar dropdown arrow caret icon fix */
+.chy-main-menu-3 .main-navigation .navbar-nav li:is(.dropdown) > a::before,
+.chy-main-menu-1 .main-navigation .navbar-nav li:is(.dropdown) > a::before,
+.main-navigation .navbar-nav li.dropdown > a::before {
+  content: "\f0d7" !important;
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
+  font-weight: 900 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
 }
