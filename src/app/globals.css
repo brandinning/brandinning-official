@@ -57,19 +57,17 @@
 }
 
 /* Ensure full width and clean rendering */
-html, body {
+html {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-#exact-body-wrapper,
-[id^="exact-"] {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* Mobile Navigation Drawer & Dropdown Styling */
@@ -138,4 +136,215 @@ html, body {
   font-variant: normal;
   text-rendering: auto;
   line-height: 1;
+}
+
+/* ==================================================== */
+/* Trustindex Google Reviews Layout & Carousel Styles   */
+/* ==================================================== */
+body #exact-body-wrapper .ti-widget.ti-goog,
+.ti-widget.ti-goog {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+  max-width: 100% !important;
+}
+
+/* Base flex setup */
+body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container,
+body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1),
+.ti-widget.ti-goog .ti-widget-container,
+.ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container .ti-footer,
+body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-footer,
+.ti-widget.ti-goog .ti-widget-container .ti-footer,
+.ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-footer {
+  flex: 0 0 240px !important;
+  max-width: 240px !important;
+  width: 240px !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container .ti-reviews-container,
+body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-reviews-container,
+.ti-widget.ti-goog .ti-widget-container .ti-reviews-container,
+.ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-reviews-container {
+  flex: 1 1 calc(100% - 264px) !important;
+  max-width: calc(100% - 264px) !important;
+  width: calc(100% - 264px) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 10px 40px !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-reviews-container-wrapper,
+.ti-widget.ti-goog .ti-reviews-container-wrapper {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 16px !important;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  width: 100% !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-review-item,
+.ti-widget.ti-goog .ti-review-item {
+  flex: 0 0 calc((100% - 32px) / 3) !important;
+  max-width: calc((100% - 32px) / 3) !important;
+  width: calc((100% - 32px) / 3) !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+}
+
+/* Tablet (768px - 1199px): Stack badge on top and display 2 cards */
+@media (max-width: 1199px) and (min-width: 768px) {
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container,
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1),
+  .ti-widget.ti-goog .ti-widget-container,
+  .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+  }
+
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container .ti-footer,
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-footer,
+  .ti-widget.ti-goog .ti-widget-container .ti-footer,
+  .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-footer {
+    flex: 0 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container .ti-reviews-container,
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-reviews-container,
+  .ti-widget.ti-goog .ti-widget-container .ti-reviews-container,
+  .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-reviews-container {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 10px 40px !important;
+  }
+
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-review-item,
+  .ti-widget.ti-goog .ti-review-item {
+    flex: 0 0 calc((100% - 16px) / 2) !important;
+    max-width: calc((100% - 16px) / 2) !important;
+    width: calc((100% - 16px) / 2) !important;
+  }
+}
+
+/* Mobile (< 768px): 1 card per view */
+@media (max-width: 767px) {
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container,
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1),
+  .ti-widget.ti-goog .ti-widget-container,
+  .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container .ti-footer,
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-footer,
+  .ti-widget.ti-goog .ti-widget-container .ti-footer,
+  .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-footer {
+    flex: 0 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container .ti-reviews-container,
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-reviews-container,
+  .ti-widget.ti-goog .ti-widget-container .ti-reviews-container,
+  .ti-widget.ti-goog .ti-widget-container:not(.ti-col-1) .ti-reviews-container {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 10px 36px !important;
+  }
+
+  body #exact-body-wrapper .ti-widget.ti-goog .ti-review-item,
+  .ti-widget.ti-goog .ti-review-item {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-controls,
+.ti-widget.ti-goog .ti-controls {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-controls .ti-prev,
+.ti-widget.ti-goog .ti-controls .ti-prev {
+  position: absolute !important;
+  left: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-controls .ti-next,
+.ti-widget.ti-goog .ti-controls .ti-next {
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 10 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-controls .ti-prev.ti-disabled,
+body #exact-body-wrapper .ti-widget.ti-goog .ti-controls .ti-next.ti-disabled,
+.ti-widget.ti-goog .ti-controls .ti-prev.ti-disabled,
+.ti-widget.ti-goog .ti-controls .ti-next.ti-disabled {
+  opacity: 0.3 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-read-more span,
+.ti-widget.ti-goog .ti-read-more span {
+  display: inline-block;
+  cursor: pointer;
+  color: #000;
+  opacity: 0.65;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+body #exact-body-wrapper .ti-widget.ti-goog .ti-read-more span:hover,
+.ti-widget.ti-goog .ti-read-more span:hover {
+  opacity: 1;
+  text-decoration: underline;
 }

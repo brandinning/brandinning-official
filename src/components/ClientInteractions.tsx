@@ -289,8 +289,176 @@ export default function ClientInteractions() {
       }
     };
 
+    // ----------------------------------------------------
+    // 6. TRUSTINDEX GOOGLE REVIEWS SLIDER CONTROLLER
+    // ----------------------------------------------------
+    let cleanupReviewsSlider: (() => void) | undefined;
+    const initReviewsSlider = () => {
+      const widget = document.querySelector<HTMLElement>(".ti-widget.ti-goog");
+      if (!widget) return;
+
+      const wrapper = widget.querySelector<HTMLElement>(".ti-reviews-container-wrapper");
+      const prevBtn = widget.querySelector<HTMLElement>(".ti-controls .ti-prev");
+      const nextBtn = widget.querySelector<HTMLElement>(".ti-controls .ti-next");
+      const items = widget.querySelectorAll<HTMLElement>(".ti-review-item");
+
+      if (!wrapper || items.length === 0) return;
+
+      let currentIndex = 0;
+
+      const getVisibleCount = () => {
+        const w = window.innerWidth;
+        if (w < 768) return 1;
+        if (w < 1200) return 2;
+        return 3;
+      };
+
+      const getMaxIndex = () => {
+        const visible = getVisibleCount();
+        return Math.max(0, items.length - visible);
+      };
+
+      const updateSlider = (smooth = true) => {
+        const visible = getVisibleCount();
+        const maxIdx = Math.max(0, items.length - visible);
+        if (currentIndex > maxIdx) currentIndex = maxIdx;
+        if (currentIndex < 0) currentIndex = 0;
+
+        const container = widget.querySelector<HTMLElement>(".ti-widget-container");
+        if (container) {
+          container.classList.remove("ti-col-1", "ti-col-2", "ti-col-3", "ti-col-4");
+          if (visible === 1) container.classList.add("ti-col-1");
+          else if (visible === 2) container.classList.add("ti-col-3");
+          else container.classList.add("ti-col-4");
+        }
+
+        const firstItem = items[0];
+        if (!firstItem) return;
+
+        const itemWidth = firstItem.getBoundingClientRect().width;
+        const gap = 16;
+        const offset = currentIndex * (itemWidth + gap);
+
+        wrapper.style.transition = smooth ? "transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)" : "none";
+        wrapper.style.transform = `translateX(-${offset}px)`;
+
+        if (prevBtn) {
+          if (currentIndex === 0) {
+            prevBtn.classList.add("ti-disabled");
+          } else {
+            prevBtn.classList.remove("ti-disabled");
+          }
+        }
+
+        if (nextBtn) {
+          if (currentIndex >= maxIdx) {
+            nextBtn.classList.add("ti-disabled");
+          } else {
+            nextBtn.classList.remove("ti-disabled");
+          }
+        }
+      };
+
+      const onPrevClick = (e: MouseEvent) => {
+        e.preventDefault();
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider(true);
+        }
+      };
+
+      const onNextClick = (e: MouseEvent) => {
+        e.preventDefault();
+        const maxIdx = getMaxIndex();
+        if (currentIndex < maxIdx) {
+          currentIndex++;
+          updateSlider(true);
+        }
+      };
+
+      // Touch swipe support
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+
+      const onTouchStart = (e: TouchEvent) => {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = true;
+      };
+
+      const onTouchEnd = (e: TouchEvent) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+          if (diffX < 0) {
+            const maxIdx = getMaxIndex();
+            if (currentIndex < maxIdx) {
+              currentIndex++;
+              updateSlider(true);
+            }
+          } else {
+            if (currentIndex > 0) {
+              currentIndex--;
+              updateSlider(true);
+            }
+          }
+        }
+      };
+
+      // Read more expander
+      items.forEach((item) => {
+        const textContainer = item.querySelector<HTMLElement>(".ti-review-text-container");
+        const readMoreSpan = item.querySelector<HTMLElement>(".ti-read-more");
+        if (textContainer && readMoreSpan) {
+          if (textContainer.scrollHeight > 85) {
+            readMoreSpan.innerHTML = '<span>Read more</span>';
+            textContainer.style.maxHeight = "85px";
+            textContainer.style.overflow = "hidden";
+            textContainer.style.transition = "max-height 0.3s ease";
+
+            readMoreSpan.addEventListener("click", (e) => {
+              e.preventDefault();
+              const isExpanded = textContainer.style.maxHeight === "none";
+              if (isExpanded) {
+                textContainer.style.maxHeight = "85px";
+                readMoreSpan.innerHTML = '<span>Read more</span>';
+              } else {
+                textContainer.style.maxHeight = "none";
+                readMoreSpan.innerHTML = '<span>Hide</span>';
+              }
+            });
+          }
+        }
+      });
+
+      if (prevBtn) prevBtn.addEventListener("click", onPrevClick);
+      if (nextBtn) nextBtn.addEventListener("click", onNextClick);
+      wrapper.addEventListener("touchstart", onTouchStart, { passive: true });
+      wrapper.addEventListener("touchend", onTouchEnd, { passive: true });
+
+      const onResize = () => updateSlider(false);
+      window.addEventListener("resize", onResize, { passive: true });
+
+      updateSlider(false);
+
+      cleanupReviewsSlider = () => {
+        if (prevBtn) prevBtn.removeEventListener("click", onPrevClick);
+        if (nextBtn) nextBtn.removeEventListener("click", onNextClick);
+        wrapper.removeEventListener("touchstart", onTouchStart);
+        wrapper.removeEventListener("touchend", onTouchEnd);
+        window.removeEventListener("resize", onResize);
+      };
+    };
+
     initCounters();
     initMobileMenu();
+    initReviewsSlider();
     document.addEventListener("click", handleAccordionClick);
     document.addEventListener("click", handleVideoClick);
     document.addEventListener("click", handleMobileClick);
@@ -300,10 +468,12 @@ export default function ClientInteractions() {
     const timer = setTimeout(() => {
       initCounters();
       initMobileMenu();
+      initReviewsSlider();
     }, 400);
 
     return () => {
       clearTimeout(timer);
+      if (cleanupReviewsSlider) cleanupReviewsSlider();
       document.removeEventListener("click", handleAccordionClick);
       document.removeEventListener("click", handleVideoClick);
       document.removeEventListener("click", handleMobileClick);
