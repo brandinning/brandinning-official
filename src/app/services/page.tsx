@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,15 +14,9 @@ export default function ServicesPage() {
     : "<div className='p-8 text-center text-xl'>Loading Services...</div>";
 
   return (
-    <>
-      <div 
+    <div 
         id="exact-services-wrapper" 
         dangerouslySetInnerHTML={{ __html: exactServices }} 
       />
-      <Script 
-        src="/wp-includes/js/jquery/jquery.min.js" 
-        strategy="beforeInteractive" 
-      />
-    </>
   );
 }

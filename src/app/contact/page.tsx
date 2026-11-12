@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import Script from "next/script";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,15 +14,9 @@ export default function ContactPage() {
     : "<div className='p-8 text-center text-xl'>Loading Contact...</div>";
 
   return (
-    <>
-      <div 
+    <div 
         id="exact-contact-wrapper" 
         dangerouslySetInnerHTML={{ __html: exactContact }} 
       />
-      <Script 
-        src="/wp-includes/js/jquery/jquery.min.js" 
-        strategy="beforeInteractive" 
-      />
-    </>
   );
 }
