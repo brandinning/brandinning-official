@@ -26,7 +26,6 @@ const nextConfig = {
     const greenRemovedRedirects = [
       { source: '/home-2', destination: '/', permanent: true },
       { source: '/blog', destination: '/blogs', permanent: true },
-      { source: '/social-media-pacakege', destination: '/packages', permanent: true },
       { source: '/best-smo-company-in-delhi-2', destination: '/best-smo-company-in-delhi', permanent: true },
       { source: '/best-seo-services-in-noida-1', destination: '/best-seo-agency-in-noida', permanent: true },
       { source: '/best-woocommerce-devevelopment-company-in-noida1', destination: '/best-woocommerce-devevelopment-company-in-noida', permanent: true },
