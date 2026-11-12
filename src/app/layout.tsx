@@ -11,6 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://brandinning.com"),
   title: "Brandinning — Create your finest digital image",
   description: "Brandinning — Digital Marketing Agency. We turn experiences into solutions!",
   icons: {
