@@ -68,17 +68,24 @@ const nextConfig = {
     ],
   },
   async redirects() {
-    // 30 Blog post root redirects to /blogs/:slug
+    // 30 Blog post root redirects to /blog/:slug
     const blogRedirects = blogsData.map((b) => ({
       source: `/${b.slug}`,
-      destination: `/blogs/${b.slug}`,
+      destination: `/blog/${b.slug}`,
+      permanent: true,
+    }));
+
+    // Redirect /blogs/:slug to /blog/:slug
+    const blogsToBlogRedirects = blogsData.map((b) => ({
+      source: `/blogs/${b.slug}`,
+      destination: `/blog/${b.slug}`,
       permanent: true,
     }));
 
     // Specific redirects for removed pages
     const specificRemovedRedirects = [
       { source: '/home-2', destination: '/', permanent: true },
-      { source: '/blog', destination: '/blogs', permanent: true },
+      { source: '/blogs', destination: '/blog', permanent: true },
       { source: '/social-media-pacakege', destination: '/packages', permanent: true },
       { source: '/best-smo-company-in-delhi-2', destination: '/best-smo-company-in-delhi', permanent: true },
       { source: '/best-seo-services-in-noida-1', destination: '/best-seo-agency-in-noida', permanent: true },
@@ -100,6 +107,7 @@ const nextConfig = {
       ...specificRemovedRedirects,
       ...cityLandingRedirects,
       ...blogRedirects,
+      ...blogsToBlogRedirects,
     ];
   },
   async headers() {

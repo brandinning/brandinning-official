@@ -24,7 +24,7 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     "slug": "how-modern-website-design-influences-customer-trust",
-    "route": "/blogs/how-modern-website-design-influences-customer-trust",
+    "route": "/blog/how-modern-website-design-influences-customer-trust",
     "title": "How Modern Website Design Influences Customer Trust",
     "info": "Blog - website design and customer trust",
     "date": "January 8, 2026",
@@ -89,7 +89,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-difference-between-marketing-and-branding",
-    "route": "/blogs/the-difference-between-marketing-and-branding",
+    "route": "/blog/the-difference-between-marketing-and-branding",
     "title": "The Difference Between Marketing and Branding",
     "info": "Blog - marketing vs branding",
     "date": "January 9, 2026",
@@ -154,7 +154,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-local-search-decides-which-business-shows-up-first",
-    "route": "/blogs/how-local-search-decides-which-business-shows-up-first",
+    "route": "/blog/how-local-search-decides-which-business-shows-up-first",
     "title": "How Local Search Decides Which Business Shows Up First",
     "info": "Blog - how local search ranking works",
     "date": "January 15, 2026",
@@ -219,7 +219,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "why-your-facebook-ads-are-not-working-and-how-to-optimise-them",
-    "route": "/blogs/why-your-facebook-ads-are-not-working-and-how-to-optimise-them",
+    "route": "/blog/why-your-facebook-ads-are-not-working-and-how-to-optimise-them",
     "title": "Why Your Facebook Ads Are Not Working (And How to Optimise Them)",
     "info": "Blog - fixing underperforming Facebook ads",
     "date": "January 19, 2026",
@@ -284,7 +284,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-psychology-behind-brand-identity-and-why-it-matters-online",
-    "route": "/blogs/the-psychology-behind-brand-identity-and-why-it-matters-online",
+    "route": "/blog/the-psychology-behind-brand-identity-and-why-it-matters-online",
     "title": "The Psychology Behind Brand Identity and Why It Matters Online",
     "info": "Blog - psychology of brand identity",
     "date": "January 20, 2026",
@@ -349,7 +349,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "seo-in-2026-what-businesses-need-to-know-now",
-    "route": "/blogs/seo-in-2026-what-businesses-need-to-know-now",
+    "route": "/blog/seo-in-2026-what-businesses-need-to-know-now",
     "title": "SEO in 2026 What Businesses Need to Know Now",
     "info": "Blog - SEO trends for 2026",
     "date": "January 27, 2026",
@@ -414,7 +414,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-difference-between-a-logo-and-a-brand-what-businesses-often-get-wrong",
-    "route": "/blogs/the-difference-between-a-logo-and-a-brand-what-businesses-often-get-wrong",
+    "route": "/blog/the-difference-between-a-logo-and-a-brand-what-businesses-often-get-wrong",
     "title": "The Difference Between a Logo and a Brand What Businesses Often Get Wrong",
     "info": "Blog - logo vs brand",
     "date": "February 3, 2026",
@@ -479,7 +479,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "organic-vs-paid-twitter-marketing-what-businesses-should-choose",
-    "route": "/blogs/organic-vs-paid-twitter-marketing-what-businesses-should-choose",
+    "route": "/blog/organic-vs-paid-twitter-marketing-what-businesses-should-choose",
     "title": "Organic vs Paid Twitter Marketing: What Businesses Should Choose",
     "info": "Blog - organic vs paid Twitter/X",
     "date": "February 5, 2026",
@@ -544,7 +544,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "linkedin-content-ideas-that-attract-business-clients",
-    "route": "/blogs/linkedin-content-ideas-that-attract-business-clients",
+    "route": "/blog/linkedin-content-ideas-that-attract-business-clients",
     "title": "LinkedIn Content Ideas That Attract Business Clients",
     "info": "Blog - LinkedIn content ideas for B2B",
     "date": "February 16, 2026",
@@ -609,7 +609,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-to-go-viral-on-twitter-without-paid-ads",
-    "route": "/blogs/how-to-go-viral-on-twitter-without-paid-ads",
+    "route": "/blog/how-to-go-viral-on-twitter-without-paid-ads",
     "title": "How to Go Viral on Twitter Without Paid Ads",
     "info": "Blog - organic virality on Twitter/X",
     "date": "February 23, 2026",
@@ -674,7 +674,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-psychology-behind-viral-content",
-    "route": "/blogs/the-psychology-behind-viral-content",
+    "route": "/blog/the-psychology-behind-viral-content",
     "title": "The Psychology Behind Viral Content",
     "info": "Blog - why content goes viral",
     "date": "February 26, 2026",
@@ -739,7 +739,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "linkedin-about-section-seo-how-to-attract-recruiters-and-clients",
-    "route": "/blogs/linkedin-about-section-seo-how-to-attract-recruiters-and-clients",
+    "route": "/blog/linkedin-about-section-seo-how-to-attract-recruiters-and-clients",
     "title": "LinkedIn About Section SEO: How to Attract Recruiters and Clients",
     "info": "Blog - LinkedIn About section SEO",
     "date": "March 4, 2026",
@@ -804,7 +804,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-2026-linkedin-seo-checklist-every-profile-section-you-need-to-optimize",
-    "route": "/blogs/the-2026-linkedin-seo-checklist-every-profile-section-you-need-to-optimize",
+    "route": "/blog/the-2026-linkedin-seo-checklist-every-profile-section-you-need-to-optimize",
     "title": "The 2026 LinkedIn SEO Checklist: Every Profile Section You Need to Optimize",
     "info": "Blog - LinkedIn SEO checklist 2026",
     "date": "March 16, 2026",
@@ -869,7 +869,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "linkedin-seo-vs-google-seo-key-differences-every-marketer-should-know",
-    "route": "/blogs/linkedin-seo-vs-google-seo-key-differences-every-marketer-should-know",
+    "route": "/blog/linkedin-seo-vs-google-seo-key-differences-every-marketer-should-know",
     "title": "LinkedIn SEO vs Google SEO: Key Differences Every Marketer Should Know",
     "info": "Blog - LinkedIn SEO vs Google SEO",
     "date": "March 21, 2026",
@@ -934,7 +934,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-to-use-keywords-in-linkedin-profile-to-attract-clients",
-    "route": "/blogs/how-to-use-keywords-in-linkedin-profile-to-attract-clients",
+    "route": "/blog/how-to-use-keywords-in-linkedin-profile-to-attract-clients",
     "title": "How to Use Keywords in LinkedIn Profile to Attract Clients",
     "info": "Blog - keywords in a LinkedIn profile",
     "date": "May 7, 2026",
@@ -999,7 +999,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-complete-guide-to-building-an-online-presence-for-local-businesses",
-    "route": "/blogs/the-complete-guide-to-building-an-online-presence-for-local-businesses",
+    "route": "/blog/the-complete-guide-to-building-an-online-presence-for-local-businesses",
     "title": "The Complete Guide to Building an Online Presence for Local Businesses",
     "info": "Blog - online presence guide for local business",
     "date": "May 9, 2026",
@@ -1064,7 +1064,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "branding-mistakes-that-are-killing-your-business-growth",
-    "route": "/blogs/branding-mistakes-that-are-killing-your-business-growth",
+    "route": "/blog/branding-mistakes-that-are-killing-your-business-growth",
     "title": "Why SEO Still Matters for Businesses in 2026",
     "info": "Blog - common branding mistakes",
     "date": "May 16, 2026",
@@ -1129,7 +1129,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "why-seo-still-matters-for-businesses-in-2026",
-    "route": "/blogs/why-seo-still-matters-for-businesses-in-2026",
+    "route": "/blog/why-seo-still-matters-for-businesses-in-2026",
     "title": "Why SEO Still Matters for Businesses in 2026",
     "info": "Blog - relevance of SEO in 2026",
     "date": "May 23, 2026",
@@ -1194,7 +1194,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "the-complete-guide-to-digital-marketing-for-small-businesses",
-    "route": "/blogs/the-complete-guide-to-digital-marketing-for-small-businesses",
+    "route": "/blog/the-complete-guide-to-digital-marketing-for-small-businesses",
     "title": "The Complete Guide to Digital Marketing for Small Businesses",
     "info": "Blog - digital marketing guide for SMBs",
     "date": "May 30, 2026",
@@ -1259,7 +1259,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "common-digital-marketing-mistakes-that-cost-businesses-money",
-    "route": "/blogs/common-digital-marketing-mistakes-that-cost-businesses-money",
+    "route": "/blog/common-digital-marketing-mistakes-that-cost-businesses-money",
     "title": "Common Digital Marketing Mistakes That Cost Businesses Money",
     "info": "Blog - costly digital marketing mistakes",
     "date": "June 7, 2026",
@@ -1324,7 +1324,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-seo-helps-small-businesses-compete-with-bigger-brands",
-    "route": "/blogs/how-seo-helps-small-businesses-compete-with-bigger-brands",
+    "route": "/blog/how-seo-helps-small-businesses-compete-with-bigger-brands",
     "title": "How SEO Helps Small Businesses Compete with Bigger Brands",
     "info": "Blog - SEO for small vs big brands",
     "date": "June 13, 2026",
@@ -1389,7 +1389,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "why-mobile-friendly-websites-are-important-for-seo",
-    "route": "/blogs/why-mobile-friendly-websites-are-important-for-seo",
+    "route": "/blog/why-mobile-friendly-websites-are-important-for-seo",
     "title": "Why Mobile Friendly Websites Are Important for SEO",
     "info": "Blog - mobile-friendliness and SEO",
     "date": "June 27, 2026",
@@ -1454,7 +1454,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "ai-seo-vs-traditional-seo-which-strategy-wins-in-2026",
-    "route": "/blogs/ai-seo-vs-traditional-seo-which-strategy-wins-in-2026",
+    "route": "/blog/ai-seo-vs-traditional-seo-which-strategy-wins-in-2026",
     "title": "AI SEO vs Traditional SEO: Which Strategy Wins in 2026?",
     "info": "Blog - AI SEO vs traditional SEO",
     "date": "July 4, 2026",
@@ -1519,7 +1519,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-to-choose-the-right-influencer-for-your-brand",
-    "route": "/blogs/how-to-choose-the-right-influencer-for-your-brand",
+    "route": "/blog/how-to-choose-the-right-influencer-for-your-brand",
     "title": "How to Choose the Right Influencer for Your Brand",
     "info": "Blog - choosing the right influencer",
     "date": "July 11, 2026",
@@ -1584,7 +1584,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-to-choose-the-right-digital-marketing-agency",
-    "route": "/blogs/how-to-choose-the-right-digital-marketing-agency",
+    "route": "/blog/how-to-choose-the-right-digital-marketing-agency",
     "title": "How to Choose the Right Digital Marketing Agency",
     "info": "Blog - choosing a marketing agency",
     "date": "July 18, 2026",
@@ -1649,7 +1649,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "signs-its-time-to-outsource-your-marketing",
-    "route": "/blogs/signs-its-time-to-outsource-your-marketing",
+    "route": "/blog/signs-its-time-to-outsource-your-marketing",
     "title": "Signs It&#039;s Time to Outsource Your Marketing",
     "info": "Blog - when to outsource marketing",
     "date": "July 25, 2026",
@@ -1714,7 +1714,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "why-keyword-research-is-the-foundation-of-seo",
-    "route": "/blogs/why-keyword-research-is-the-foundation-of-seo",
+    "route": "/blog/why-keyword-research-is-the-foundation-of-seo",
     "title": "Why Keyword Research Is the Foundation of SEO",
     "info": "Blog - importance of keyword research",
     "date": "August 1, 2026",
@@ -1779,7 +1779,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "15-seo-mistakes-that-are-hurting-your-website-rankings",
-    "route": "/blogs/15-seo-mistakes-that-are-hurting-your-website-rankings",
+    "route": "/blog/15-seo-mistakes-that-are-hurting-your-website-rankings",
     "title": "15 SEO Mistakes That Are Hurting Your Website Rankings",
     "info": "Blog - 15 SEO mistakes",
     "date": "August 8, 2026",
@@ -1844,7 +1844,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "how-to-optimize-your-website-for-ai-search-engines",
-    "route": "/blogs/how-to-optimize-your-website-for-ai-search-engines",
+    "route": "/blog/how-to-optimize-your-website-for-ai-search-engines",
     "title": "How to Optimize Your Website for AI Search Engines",
     "info": "Blog - optimizing for AI search engines",
     "date": "August 8, 2026",
@@ -1909,7 +1909,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     "slug": "ppc-advertising-tips-for-small-budgets-how-to-maximize-every-rupee",
-    "route": "/blogs/ppc-advertising-tips-for-small-budgets-how-to-maximize-every-rupee",
+    "route": "/blog/ppc-advertising-tips-for-small-budgets-how-to-maximize-every-rupee",
     "title": "PPC Advertising Tips for Small Budgets: How to Maximize Every Rupee",
     "info": "Blog - PPC tips on a small budget",
     "date": "January 16, 2026",
