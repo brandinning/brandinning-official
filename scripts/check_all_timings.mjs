@@ -10,12 +10,12 @@ const routes = [
   "/case-studies",
   "/portfolio",
   "/career",
-  "/blogs",
+  "/blog",
+  "/blog/how-to-optimize-your-website-for-ai-search-engines",
   "/industries",
   "/packages",
   "/seo-package",
   "/local-seo-package",
-  "/social-media-pacakege",
   "/digital-marketing-package"
 ];
 
